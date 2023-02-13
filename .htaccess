@@ -1,0 +1,4 @@
+<Files data/bd.json>
+    Order Deny.Allow
+    Deny from all
+</Files>
