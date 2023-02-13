@@ -13,8 +13,8 @@ if (userFind) {
 
     document.querySelector('.user_on').addEventListener('click', () => {
 
-        document.cookie = 'login=';
-        document.cookie = 'username=';
+        document.cookie = 'login=; path=/';
+        document.cookie = 'username=; path=/';
         location = '/';
     })
 
@@ -27,7 +27,7 @@ if (userFind) {
 
     document.querySelector('.user_off').addEventListener('click', () => {
 
-        location = '/registration.php';
+        location = '../pages/registration.php';
     })
 }
 
