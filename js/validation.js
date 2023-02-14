@@ -1,7 +1,7 @@
 const ENTER_USERNAME = 'Введите имя пользователя';
 const WRONG_USERNAME_LANGUAGE = 'Имя пользователя должно содержать только цифры и латинские буквы';
 const WRONG_MAX_LENGTH = 'Превышено максимальное количество символов';
-const WRONG_MIN_LENGTH = 'Введите не меньше четырех символов'
+const WRONG_MIN_LENGTH = 'Введите не меньше шести символов'
 const WRONG_MIN_LENGTH_USERNAME = 'Введите не меньше двух символов'
 
 const ENTER_EMAIL = 'Введите почту';
@@ -12,13 +12,17 @@ const ENTER_PASSWORD = 'Введите пароль';
 const WRONG_PASSWORD_LANGUAGE =
     'Пароль должен состоять только из цифр и латинских букв';
 const WRONG_PASSWORD_LENGTH =
-    'Пароль должен содержать не менее 8 символов и не более 30 символов';
+    'Пароль должен содержать не менее 6 символов и не более 30 символов';
+const WRONG_LETTER_AND_NUMBER =
+    'Пароль должен содержать буквы и цифры';
 const NOT_ERROR = '';
 
 const _userNameLanguageRegExp = /[a-zA-Z][a-zA-Z0-9-]+$/;
 const _emailLanguageRegExp = /^[A-z._@\s\-\d]+$/;
 const _emailRegExp = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-const _passwordLanguageRegExp = /^[A-z\d]/;
+const _passwordLanguageRegExp = /[^A-Za-z0-9]/;
+const _passwordLetterNumber = /(?=.*[a-zA-Z])(?=.*[0-9])/;
+
 
 export const validateUserName = (user) => {
 
@@ -52,7 +56,7 @@ export const validateLogin = (user) => {
         return WRONG_MAX_LENGTH;
     }
 
-    if (user.length < 4) {
+    if (user.length < 6) {
         return WRONG_MIN_LENGTH
     }
 
@@ -83,11 +87,7 @@ export const validatePassword = (password) => {
         return ENTER_PASSWORD;
     }
 
-    if (!_passwordLanguageRegExp.test(password)) {
-        return WRONG_PASSWORD_LANGUAGE;
-    }
-
-    if (password.length < 8) {
+    if (password.length < 6) {
         return WRONG_PASSWORD_LENGTH;
     }
 
@@ -95,5 +95,12 @@ export const validatePassword = (password) => {
         return WRONG_PASSWORD_LENGTH;
     }
 
+    if (_passwordLanguageRegExp.test(password)) {
+        return WRONG_PASSWORD_LANGUAGE;
+    }
+
+    if (!_passwordLetterNumber.test(password)) {
+        return WRONG_LETTER_AND_NUMBER;
+    }
     return NOT_ERROR;
 }

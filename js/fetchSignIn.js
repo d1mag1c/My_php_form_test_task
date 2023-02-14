@@ -6,6 +6,7 @@ const formFetchSignIn = document.querySelector('#form_sign_in');
 formFetchSignIn.addEventListener('submit', (e) => {
     e.preventDefault();
 
+
     const formData = new FormData(formFetchSignIn);
     let checkLogin = validateLogin(formData.get('login').trim());
     let checkPassword = validatePassword(formData.get('password').trim());
@@ -30,10 +31,10 @@ formFetchSignIn.addEventListener('submit', (e) => {
             }
 
             if (response.login && response.password) {
-            
+
                 console.log(response)
-            location = '/'
-            
+                location = '/'
+
             }
 
         })

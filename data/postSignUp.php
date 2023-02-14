@@ -2,14 +2,14 @@
 
 require 'functions.php';
 
-$userName = $_POST['username'];
-$login = $_POST['login'];
-$email = $_POST['email'];
+$userName = trim($_POST['username']);
+$login = trim($_POST['login']);
+$email = trim($_POST['email']);
+$password = trim($_POST['password']);
 
+if ($userName && $login && $email && $password) {
 
-if ($userName && $login && $email && $_POST['password']) {
-
-    $password = md5($_POST['password'] . 'sugar');
+    $password = md5($password . 'sugar');
 
     $responseUser = [
         'login' => $login,

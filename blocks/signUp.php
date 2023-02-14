@@ -1,4 +1,4 @@
-<form action="#" id="form_sign_up" class="form_sign_up">
+<form id="form_sign_up" class="form_sign_up">
     <div>
         <div class="wrapper_input">
             <input type="text" name="username" placeholder="Ваше имя">
@@ -22,5 +22,5 @@
         </div>
     </div>
     <span class="message_different_passwords">Пароли не совпадают!</span>
-    <input type="submit">
+    <button type="submit">Зарегистрироваться</button>
 </form>

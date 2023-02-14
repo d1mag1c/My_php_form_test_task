@@ -1,7 +1,7 @@
-<form action="" id="form_sign_in" class="form_sign_in active_form">
+<form id="form_sign_in" class="form_sign_in active_form">
     <div>
         <div class="wrapper_input">
-            <input type="text" name="login" placeholder="Введите ваш логин">
+            <input type="text" name="login" class="input_login" placeholder="Введите ваш логин">
             <span class="form_sign_in__span_login"></span>
         </div>
 
@@ -10,5 +10,5 @@
             <span class="form_sign_in__span_password"></span>
         </div>
     </div>
-    <input type="submit">
+    <button type="submit">Войти</button>
 </form>

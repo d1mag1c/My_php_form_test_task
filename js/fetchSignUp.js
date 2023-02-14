@@ -8,11 +8,11 @@ formFetchSignUp.addEventListener('submit', (e) => {
 
     let formData = new FormData(formFetchSignUp);
 
-    let checkUserName = validateUserName(formData.get('username').trim());
-    let checkLogin = validateLogin(formData.get('login').trim());
-    let checkEmail = validateEmail(formData.get('email').trim());
-    let checkPassword = validatePassword(formData.get('password').trim());
-    let checkPasswordConfirm = validatePassword(formData.get('password_confirm').trim());
+    let checkUserName = validateUserName((formData.get('username').trim()));
+    let checkLogin = validateLogin((formData.get('login').trim()));
+    let checkEmail = validateEmail((formData.get('email').trim()));
+    let checkPassword = validatePassword((formData.get('password').trim()));
+    let checkPasswordConfirm = validatePassword((formData.get('password_confirm').trim()));
 
     const spanUserName = document.querySelector('.form_sign_up__span_username');
     const spanLogin = document.querySelector('.form_sign_up__span_login');
@@ -53,8 +53,6 @@ formFetchSignUp.addEventListener('submit', (e) => {
             }
 
             if (!response.login && !response.email) {
-
-        
 
                 let regSuccessBlock = document.querySelector('.reg_success_block');
               

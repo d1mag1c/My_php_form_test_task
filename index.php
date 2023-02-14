@@ -1,1 +1,1 @@
-<?php require "pages/main.php" ?>
+<?php require "./pages/main.php" ?>

@@ -2,12 +2,12 @@
 
 require 'functions.php';
 
-$login = $_POST['login'];
+$login = trim($_POST['login']);
+$password = trim($_POST['password']);
 
+if ($login && $password) {
 
-if ($login && $_POST['password']) {
-
-    $password = md5($_POST['password'] . 'sugar');
+    $password = md5($password . 'sugar');
 
     $json = file_get_contents('bd.json');
     $jsonArray = json_decode($json, true);
