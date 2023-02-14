@@ -27,7 +27,7 @@ if (userFind) {
 
     document.querySelector('.user_off').addEventListener('click', () => {
 
-        location = '../pages/registration.php';
+        location = '/pages/registration.php';
     })
 }
 
