@@ -13,7 +13,7 @@ if(userFind) {
     mainUser.classList.add('display_none');
     mainOffline.classList.remove('display_none')
     document.querySelector('.main__button').addEventListener('click', () => {
-        location = 'pages/registration.php';
+        location = '../pages/registration.php';
     })
 
 }
