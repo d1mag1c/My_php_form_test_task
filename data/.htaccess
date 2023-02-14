@@ -1,0 +1,4 @@
+
+<Files ~ ".json$">
+Redirect  /pages/404.php
+</Files>

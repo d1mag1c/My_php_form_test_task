@@ -1,4 +1,10 @@
-<Files data/bd.json>
-    Order Deny.Allow
-    Deny from all
-</Files>
+<IfModule dir_module>
+    DirectoryIndex index.php
+</IfModule>
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .php
+<FilesMatch "\.(php|css)$">
+   Header set Cache-Control: "no-cache, no-store"
+   Header unset ETag
+</FilesMatch>
+Header set X-Content-Type-Options nosniff
